@@ -7,7 +7,6 @@ import {
 import { Construct } from 'constructs'
 import { MyPipelineAppStage } from './app-stage'
 import { envNameContext } from '../../cdk.context'
-import { execSync } from 'child_process'
 import { getCurrentGitBranch } from '../../bin/utils'
 
 type TripLoggerDeploymentStackProps = cdk.StackProps & {
