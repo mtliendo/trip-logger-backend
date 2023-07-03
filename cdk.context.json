@@ -1,0 +1,26 @@
+{
+	"globals": {
+		"appName": "trip-logger",
+		"appDescription": "A fullstack app for viewing trip info"
+	},
+	"environments": [
+		{
+			"environment": "prod",
+			"branchName": "main",
+			"region": "us-east-1",
+			"account": "842537737558"
+		},
+		{
+			"environment": "staging",
+			"branchName": "staging",
+			"region": "us-east-1",
+			"account": "842537737558"
+		},
+		{
+			"environment": "sandbox",
+			"branchName": "develop",
+			"region": "us-east-1",
+			"account": "842537737558"
+		}
+	]
+}
