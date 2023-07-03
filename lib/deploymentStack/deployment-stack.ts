@@ -27,7 +27,7 @@ export class TripLoggerDeploymentStack extends cdk.Stack {
 			pipelineName: pipelineName,
 			synth: new ShellStep('Synth', {
 				input: CodePipelineSource.gitHub(
-					'mtliendo/sample-cdk-pipeline',
+					'mtliendo/trip-logger-backend',
 					// this doesn't create a new pipeline, it just pulls this branch of the repo
 					'develop'
 				),
