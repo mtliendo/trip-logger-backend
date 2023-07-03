@@ -34,7 +34,7 @@ export class TripLoggerDeploymentStack extends cdk.Stack {
 				commands: [
 					'npm ci',
 					'npm run build',
-					`echo "the current branch: ${currentGitBranch}"`,
+					`echo "the current branch: ${currentGitBranch}!"`,
 					'npx aws-cdk synth',
 				],
 			}),
