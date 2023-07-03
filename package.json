@@ -11,7 +11,6 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@types/git-branch": "^2.0.2",
     "@types/jest": "^29.5.1",
     "@types/node": "20.1.7",
     "aws-cdk": "2.85.0",
@@ -23,7 +22,6 @@
   "dependencies": {
     "aws-cdk-lib": "2.85.0",
     "constructs": "^10.0.0",
-    "git-branch": "^2.0.1",
     "source-map-support": "^0.5.21"
   }
 }

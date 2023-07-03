@@ -6,8 +6,9 @@ import {
 } from 'aws-cdk-lib/pipelines'
 import { Construct } from 'constructs'
 import { MyPipelineAppStage } from './app-stage'
-import * as branch from 'git-branch'
 import { envNameContext } from '../../cdk.context'
+import { execSync } from 'child_process'
+import { getCurrentGitBranch } from '../../bin/utils'
 
 type TripLoggerDeploymentStackProps = cdk.StackProps & {
 	environment: envNameContext
@@ -20,7 +21,7 @@ export class TripLoggerDeploymentStack extends cdk.Stack {
 	) {
 		super(scope, id, props)
 
-		const currentGitBranch = branch.sync()
+		const currentGitBranch = getCurrentGitBranch()
 		const pipelineName = `TripLogger-Backend-Pipeline-${props.environment}`
 
 		const pipeline = new CodePipeline(this, pipelineName, {
@@ -29,7 +30,7 @@ export class TripLoggerDeploymentStack extends cdk.Stack {
 				input: CodePipelineSource.gitHub(
 					'mtliendo/trip-logger-backend',
 					// this doesn't create a new pipeline, it just pulls this branch of the repo
-					'develop'
+					currentGitBranch
 				),
 				commands: [
 					'npm ci',
